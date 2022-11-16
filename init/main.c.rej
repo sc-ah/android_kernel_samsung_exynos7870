@@ -1,0 +1,12 @@
+--- init/main.c
++++ init/main.c
+@@ -631,6 +631,9 @@ asmlinkage __visible void __init start_kernel(void)
+ 			   set_init_arg);
+ 
+ #ifdef CONFIG_TIMA_RKP
++#ifdef CONFIG_KVM
++#error "RKP and KVM cannot coexist!"
++#endif
+ #ifdef CONFIG_KNOX_KAP
+ 	if (boot_mode_security)
+ 		vmm_init();
