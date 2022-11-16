@@ -574,7 +574,7 @@ asmlinkage __visible void __init start_kernel(void)
 	trap_init();
 	mm_init();
 #ifdef CONFIG_KVM
-    void preinit_hyp_mode(void);
+	void preinit_hyp_mode(void);
     preinit_hyp_mode();
 #endif
 
